@@ -1,45 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"><modelVersion>4.0.0</modelVersion>
-	<groupId>chernyshov.ignat</groupId>
-	<artifactId>microservice-project-parent</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>microservice-project-parent</name>
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>chernyshov.ignat</groupId>
+  <artifactId>microservice-project-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>microservice-project-parent</name>
   
-	<modules>
-	   <module>manager-app</module>
-	</modules>
+  <modules>
+    <module>manager-app</module>
+    <module>catalogue-service</module>
+  </modules>
   
-	<properties>
-	    <maven.compiler.source>22</maven.compiler.source>
-	    <maven.compiler.target>22</maven.compiler.target>
-	    <spring.version>3.2.2</spring.version>
-	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-  
-  	<dependencyManagement>
-  		<dependencies>
-			<dependency>
-			    <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-dependencies</artifactId>
-			    <version>3.3.4</version>
-			    <type>pom</type>
-			    <scope>import</scope>
-			</dependency>
-		</dependencies>
-    </dependencyManagement>
-  
-  	<build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.12.1</version>
-                <configuration>
-                    <parameters>true</parameters>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-  
+  <properties>
+    <maven.compiler.source>22</maven.compiler.source>
+    <maven.compiler.target>22</maven.compiler.target>
+    <spring.version>3.2.2</spring.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>3.3.4</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.12.1</version>
+        <configuration>
+          <parameters>true</parameters>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
