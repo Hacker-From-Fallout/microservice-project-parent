@@ -2,18 +2,14 @@ package chernyshov.ignat.manager.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import chernyshov.ignat.manager.client.BadRequestException;
+import chernyshov.ignat.manager.client.ProductsRestClient;
 import chernyshov.ignat.manager.controller.payload.NewProductPayload;
 import chernyshov.ignat.manager.entity.Product;
-import chernyshov.ignat.manager.service.ProductService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -21,11 +17,11 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("catalogue/products")
 public class ProductsController {
 
-	private final ProductService productService;
+	private final ProductsRestClient productsRestClient;
 	
 	@GetMapping("list")
 	public String getProductsList(Model model) {
-		model.addAttribute("products", this.productService.findAllProducts());
+		model.addAttribute("products", this.productsRestClient.findAllProducts());
 		return "catalogue/products/list";
 	}
 	
@@ -35,18 +31,15 @@ public class ProductsController {
 	}
 	
 	@PostMapping("create")
-	public String createProduct(@Valid NewProductPayload payload,
-								BindingResult bindingResult,
+	public String createProduct(NewProductPayload payload,
 								Model model) {
-		if (bindingResult.hasErrors()) {
-			model.addAttribute("payload", payload);
-			model.addAttribute("errors", bindingResult.getAllErrors().stream()
-					.map(ObjectError::getDefaultMessage)
-					.toList());
-			return "catalogue/products/new_product";
-		} else {
-			Product product = this.productService.createProduct(payload.title(), payload.details());
-			return "redirect:/catalogue/products/%d".formatted(product.getId());
-		}
+		try {
+            Product product = this.productsRestClient.createProduct(payload.title(), payload.details());
+            return "redirect:/catalogue/products/%d".formatted(product.id());
+        } catch (BadRequestException exception) {
+            model.addAttribute("payload", payload);
+            model.addAttribute("errors", exception.getErrors());
+            return "catalogue/products/new_product";
+        }
 	}	
 }
