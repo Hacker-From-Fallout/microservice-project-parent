@@ -1,18 +1,12 @@
 package chernyshov.ignat.catalogue.repository;
 
-import java.util.List;
-import java.util.Optional;
+import org.springframework.data.repository.CrudRepository;
 
 import chernyshov.ignat.catalogue.entity.Product;
 
-public interface ProductRepository {
-
-	List<Product> findAll();
-
-	Product save(Product product);
-
-	Optional<Product> findById(Integer productId);
-
-	void deleteById(Integer id);
-
+public interface ProductRepository extends CrudRepository<Product, Integer> {
+	
+	//@Query(value = "select p from Product p where p.title ilike :filter")	
+	//@Query(value = "SELECT * FROM catalogue.t_product WHERE c_title LIKE :filter", nativeQuery = true)
+	Iterable<Product> findAllByTitleLikeIgnoreCase(String filter);
 }
