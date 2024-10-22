@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import chernyshov.ignat.catalogue.entity.Product;
 import chernyshov.ignat.catalogue.repository.ProductRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -17,11 +18,15 @@ public class DefaultProductService implements ProductService {
 	private final ProductRepository productRepository;
 	
 	@Override
-	public List<Product> findAllProducts() {
+	public Iterable<Product> findAllProducts(String filter) {
+		if (filter != null && !filter.isBlank()) {
+			return this.productRepository.findAllByTitleLikeIgnoreCase("%" + filter + "%");
+		}
 		return this.productRepository.findAll();
 	}
 
 	@Override
+	@Transactional
 	public Product createProduct(String title, String details) {
 		return this.productRepository.save(new Product(null, title, details));
 	}
@@ -32,17 +37,19 @@ public class DefaultProductService implements ProductService {
 	}
 
 	@Override
+	@Transactional
 	public void updateProduct(Integer id, String title, String details) {
 		this.productRepository.findById(id)
 				.ifPresentOrElse(product -> {
 					product.setTitle(title);
-					product.setDetails(details);
+					product.setDetails(details);				
 				}, () -> {
 					throw new NoSuchElementException();
 				});
 	}
 
 	@Override
+	@Transactional
 	public void deleteProduct(Integer id) {
 		this.productRepository.deleteById(id);
 	}
