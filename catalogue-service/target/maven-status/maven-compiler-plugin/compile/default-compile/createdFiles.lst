@@ -1,4 +1,5 @@
 chernyshov\ignat\catalogue\CatalogueServiceApplication.class
+chernyshov\ignat\catalogue\config\SecurityBeans.class
 chernyshov\ignat\catalogue\controller\ProductRestController.class
 chernyshov\ignat\catalogue\controller\ProductsRestController.class
 chernyshov\ignat\catalogue\controller\payload\NewProductPayload.class
