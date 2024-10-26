@@ -1,15 +1,13 @@
-chernyshov\ignat\manager\repository\SelmagUserRepository.class
+chernyshov\ignat\manager\config\SecurityBeans.class
 chernyshov\ignat\manager\controller\payload\UpdateProductPayload.class
-chernyshov\ignat\manager\entity\Authority.class
 chernyshov\ignat\manager\ManagerApplication.class
 chernyshov\ignat\manager\client\RestClientProductsRestClient$1.class
+chernyshov\ignat\manager\security\OAuthClientHttpRequestInterceptor.class
 chernyshov\ignat\manager\controller\payload\NewProductPayload.class
 chernyshov\ignat\manager\entity\Product.class
 chernyshov\ignat\manager\controller\ProductsController.class
-chernyshov\ignat\manager\security\SelmagUserDetailService.class
 chernyshov\ignat\manager\controller\ProductController.class
 chernyshov\ignat\manager\config\ClientBeans.class
-chernyshov\ignat\manager\entity\SelmagUser.class
 chernyshov\ignat\manager\client\BadRequestException.class
 chernyshov\ignat\manager\client\ProductsRestClient.class
 chernyshov\ignat\manager\client\RestClientProductsRestClient.class
