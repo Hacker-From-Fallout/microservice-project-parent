@@ -71,7 +71,7 @@ public class ProductRestController {
 	}
 	
 	@ExceptionHandler(NoSuchElementException.class)
-	public ResponseEntity<ProblemDetail> handleNoSauchElementException(NoSuchElementException exception,
+	public ResponseEntity<ProblemDetail> handleNoSuchElementException(NoSuchElementException exception,
 																	   Locale locale) {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND)
 				.body(ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, 

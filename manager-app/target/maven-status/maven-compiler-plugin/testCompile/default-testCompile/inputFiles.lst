@@ -1,4 +1,7 @@
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\test\java\chernyshov\ignat\manager\config\TestingBeans.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\test\java\chernyshov\ignat\manager\controller\ProductControllerIT.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\test\java\chernyshov\ignat\manager\controller\ProductControllerTest.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\test\java\chernyshov\ignat\manager\controller\ProductsControllerIT.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\test\java\chernyshov\ignat\manager\controller\ProductsControllerTest.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\test\java\chernyshov\ignat\manager\ManagerApplicationTest.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\test\java\chernyshov\ignat\manager\security\OAuthClientHttpRequestInterceptorTest.java

@@ -1,4 +1,8 @@
+chernyshov\ignat\catalogue\controller\ProductRestControllerTest.class
+chernyshov\ignat\catalogue\controller\ProductRestControllerIT.class
+chernyshov\ignat\catalogue\service\DefaultProductServiceTest.class
 chernyshov\ignat\catalogue\CatalogueServiceApplicationTest.class
 chernyshov\ignat\catalogue\repository\ProductRepositoryIT.class
 chernyshov\ignat\catalogue\controller\ProductsRestControllerIT.class
+chernyshov\ignat\catalogue\controller\ProductsRestControllerTest.class
 chernyshov\ignat\catalogue\config\TestingBeans.class

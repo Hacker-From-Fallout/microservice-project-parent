@@ -1,4 +1,7 @@
+chernyshov\ignat\manager\controller\ProductControllerTest.class
+chernyshov\ignat\manager\ManagerApplicationTest.class
+chernyshov\ignat\manager\security\OAuthClientHttpRequestInterceptorTest.class
+chernyshov\ignat\manager\config\TestingBeans.class
 chernyshov\ignat\manager\controller\ProductsControllerTest.class
 chernyshov\ignat\manager\controller\ProductsControllerIT.class
-chernyshov\ignat\manager\ManagerApplicationTest.class
-chernyshov\ignat\manager\config\TestingBeans.class
+chernyshov\ignat\manager\controller\ProductControllerIT.class
