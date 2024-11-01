@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: chernyshov.ignat.catalogue.controller.ProductRestControllerTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.996 s -- in chernyshov.ignat.catalogue.controller.ProductRestControllerTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.328 s -- in chernyshov.ignat.catalogue.controller.ProductRestControllerTest

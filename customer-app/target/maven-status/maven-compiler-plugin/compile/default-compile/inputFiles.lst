@@ -1,4 +1,11 @@
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\client\exception\ClientBadRequestException.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\client\FavouriteProductsClient.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\client\payload\NewFavouriteProductPayload.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\client\payload\NewProductReviewPayload.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\client\ProductReviewsClient.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\client\ProductsClient.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\client\WebClientFavouriteProductsClient.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\client\WebClientProductReviewsClient.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\client\WebClientProductsClient.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\confiq\ClientConfig.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\controller\payload\NewProductReviewPayload.java
@@ -8,11 +15,3 @@ E:\Projects\projectsIT\java-project\Real web application using Spring\microservi
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\entity\FavouriteProduct.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\entity\Product.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\entity\ProductReview.java
-E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\repository\FavouriteProductRepository.java
-E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\repository\InMemoryFavouriteProductRepository.java
-E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\repository\InMemoryProductReviewRepository.java
-E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\repository\ProductReviewRepository.java
-E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\service\DefaultFavouriteProductsService.java
-E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\service\DefaultProductReviewsService.java
-E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\service\FavouriteProductsService.java
-E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\customer-app\src\main\java\chernyshov\ignat\customer\service\ProductReviewsService.java

@@ -1,0 +1,16 @@
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\controller\ExceptionHandlingControllerAdvice.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\controller\FavouriteProductsRestController.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\controller\payload\NewFavouriteProductPayload.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\controller\payload\NewProductReviewPayload.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\controller\ProductReviewsRestController.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\entity\FavouriteProduct.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\entity\ProductReview.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\FeedbackServiceApplication.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\repository\FavouriteProductRepository.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\repository\InMemoryFavouriteProductRepository.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\repository\InMemoryProductReviewRepository.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\repository\ProductReviewRepository.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\service\DefaultFavouriteProductsService.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\service\DefaultProductReviewsService.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\service\FavouriteProductsService.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\feedback-service\src\main\java\chernyshov\ignat\feedback\service\ProductReviewsService.java

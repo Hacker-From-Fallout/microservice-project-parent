@@ -2,20 +2,6 @@ package chernyshov.ignat.customer.entity;
 
 import java.util.UUID;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+public record ProductReview(UUID id, int productId, int rating, String review) {
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class ProductReview {
-
-	private UUID id;
-	
-	private int productId;
-	
-	private int rating;
-	
-	private String review;
 }
