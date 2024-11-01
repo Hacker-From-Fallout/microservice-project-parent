@@ -1,4 +1,3 @@
-chernyshov\ignat\feedback\repository\InMemoryProductReviewRepository.class
 chernyshov\ignat\feedback\service\DefaultProductReviewsService.class
 chernyshov\ignat\feedback\service\ProductReviewsService.class
 chernyshov\ignat\feedback\controller\payload\NewFavouriteProductPayload.class
@@ -11,6 +10,5 @@ chernyshov\ignat\feedback\entity\ProductReview.class
 chernyshov\ignat\feedback\controller\payload\NewProductReviewPayload.class
 chernyshov\ignat\feedback\repository\FavouriteProductRepository.class
 chernyshov\ignat\feedback\controller\ProductReviewsRestController.class
-chernyshov\ignat\feedback\repository\InMemoryFavouriteProductRepository.class
 chernyshov\ignat\feedback\entity\FavouriteProduct.class
 chernyshov\ignat\feedback\service\FavouriteProductsService.class
