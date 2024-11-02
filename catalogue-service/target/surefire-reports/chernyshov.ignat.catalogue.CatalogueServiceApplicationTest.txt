@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: chernyshov.ignat.catalogue.CatalogueServiceApplicationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in chernyshov.ignat.catalogue.CatalogueServiceApplicationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in chernyshov.ignat.catalogue.CatalogueServiceApplicationTest

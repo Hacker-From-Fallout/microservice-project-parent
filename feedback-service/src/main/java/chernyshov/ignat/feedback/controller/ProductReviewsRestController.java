@@ -1,6 +1,7 @@
 package chernyshov.ignat.feedback.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,12 +15,14 @@ import chernyshov.ignat.feedback.entity.ProductReview;
 import chernyshov.ignat.feedback.service.ProductReviewsService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("feedback-api/product-reviews")
 @RequiredArgsConstructor
+@Slf4j
 public class ProductReviewsRestController {
 
 	private final ProductReviewsService productReviewsService;
@@ -31,11 +34,12 @@ public class ProductReviewsRestController {
 	
 	@PostMapping
     public Mono<ResponseEntity<ProductReview>> createProductReview(
+    		Mono<JwtAuthenticationToken> authenticationTokenMono,
             @Valid @RequestBody Mono<NewProductReviewPayload> payloadMono,
             UriComponentsBuilder uriComponentsBuilder) {
-        return payloadMono
+        return authenticationTokenMono.flatMap(token -> payloadMono
                 .flatMap(payload -> this.productReviewsService.createProductReview(payload.productId(),
-                        payload.rating(), payload.review()))
+                        payload.rating(), payload.review(), token.getToken().getSubject())))
                 .map(productReview -> ResponseEntity
                         .created(uriComponentsBuilder.replacePath("/feedback-api/product-reviews/{id}")
                                 .build(productReview.getId()))

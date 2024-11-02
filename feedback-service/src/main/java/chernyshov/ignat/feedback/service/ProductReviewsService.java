@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 
 public interface ProductReviewsService {
 
-	Mono<ProductReview> createProductReview(int ProductId, int rating, String review);
+	Mono<ProductReview> createProductReview(int ProductId, int rating, String review, String UserId);
 	
 	Flux<ProductReview> findProductReviewsByProduct(int productId);
 }
