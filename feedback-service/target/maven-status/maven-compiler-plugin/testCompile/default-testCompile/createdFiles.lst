@@ -1,1 +1,8 @@
+chernyshov\ignat\feedback\config\TestBeans.class
+chernyshov\ignat\feedback\controller\FavouriteProductsRestControllerIT.class
+chernyshov\ignat\feedback\controller\ProductReviewsRestControllerIT.class
+chernyshov\ignat\feedback\controller\ProductReviewsRestControllerTest.class
 chernyshov\ignat\feedback\FeedbackServiceApplicationTest.class
+chernyshov\ignat\feedback\service\DefaultProductReviewsServiceTest.class
+chernyshov\ignat\feedback\controller\FavouriteProductsRestControllerTest.class
+chernyshov\ignat\feedback\service\DefaultFavouriteProductsServiceTest.class

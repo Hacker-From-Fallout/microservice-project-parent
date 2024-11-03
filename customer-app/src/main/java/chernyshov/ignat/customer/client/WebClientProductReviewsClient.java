@@ -28,7 +28,7 @@ public class WebClientProductReviewsClient implements ProductReviewsClient {
     }
 
     @Override
-    public Mono<ProductReview> createProductReview(Integer productId, Integer rating, String review) {    	    	   	
+    public Mono<ProductReview> createProductReview(Integer productId, Integer rating, String review) {
         return this.webClient
                 .post()
                 .uri("/feedback-api/product-reviews")
@@ -36,8 +36,8 @@ public class WebClientProductReviewsClient implements ProductReviewsClient {
                 .retrieve()
                 .bodyToMono(ProductReview.class)
                 .onErrorMap(WebClientResponseException.BadRequest.class,
-                        exception -> new ClientBadRequestException(exception,
-                                ((List<String>) exception.getResponseBodyAs(ProblemDetail.class)
+                        exception -> new ClientBadRequestException("Возникла ошибка при добавление отзыва о товаре",
+                                exception, ((List<String>) exception.getResponseBodyAs(ProblemDetail.class)
                                         .getProperties().get("errors"))));
     }
 }

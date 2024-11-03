@@ -1,1 +1,6 @@
+chernyshov\ignat\customer\controller\ProductsControllerTest.class
 chernyshov\ignat\customer\CustomerApplicationTest.class
+chernyshov\ignat\customer\controller\ProductControllerIT.class
+chernyshov\ignat\customer\controller\ProductsControllerIT.class
+chernyshov\ignat\customer\config\TestBeans.class
+chernyshov\ignat\customer\controller\ProductControllerTest.class
