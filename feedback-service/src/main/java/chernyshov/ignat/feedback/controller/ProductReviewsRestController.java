@@ -13,6 +13,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import chernyshov.ignat.feedback.controller.payload.NewProductReviewPayload;
 import chernyshov.ignat.feedback.entity.ProductReview;
 import chernyshov.ignat.feedback.service.ProductReviewsService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +30,9 @@ public class ProductReviewsRestController {
 	private final ProductReviewsService productReviewsService;
 	
 	@GetMapping("by-product-id/{productId:\\d+}")
+	@Operation(
+            security = @SecurityRequirement(name = "keycloak")
+    )
 	public Flux<ProductReview> findProductReviewsByProductId(@PathVariable("productId") int productId) {
 		return this.productReviewsService.findProductReviewsByProduct(productId);
 	}

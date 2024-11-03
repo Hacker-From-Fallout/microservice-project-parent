@@ -1,3 +1,4 @@
+chernyshov\ignat\catalogue\config\SpringDocBeans$SpringDocSecurity.class
 chernyshov\ignat\catalogue\CatalogueServiceApplication.class
 chernyshov\ignat\catalogue\config\SecurityBeans.class
 chernyshov\ignat\catalogue\controller\ProductRestController.class
@@ -5,6 +6,7 @@ chernyshov\ignat\catalogue\controller\ProductsRestController.class
 chernyshov\ignat\catalogue\controller\payload\NewProductPayload.class
 chernyshov\ignat\catalogue\controller\BadRequestControllerAdvice.class
 chernyshov\ignat\catalogue\entity\Product.class
+chernyshov\ignat\catalogue\config\SpringDocBeans.class
 chernyshov\ignat\catalogue\service\ProductService.class
 chernyshov\ignat\catalogue\service\DefaultProductService.class
 chernyshov\ignat\catalogue\repository\ProductRepository.class

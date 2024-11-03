@@ -4,14 +4,27 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.http.HttpHeaders;
+import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.client.ExchangeFilterFunction;
+
+import static org.springframework.restdocs.headers.HeaderDocumentation.*;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
+import static org.springframework.restdocs.payload.PayloadDocumentation.*;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessResponse;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessRequest;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint;
+import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
+import static org.springframework.restdocs.webtestclient.WebTestClientRestDocumentation.document;
 
 import chernyshov.ignat.feedback.entity.ProductReview;
 import reactor.core.publisher.Mono;
@@ -24,6 +37,8 @@ import static org.springframework.security.test.web.reactive.server.SecurityMock
 @Slf4j
 @SpringBootTest
 @AutoConfigureWebTestClient
+@AutoConfigureRestDocs
+@ExtendWith(RestDocumentationExtension.class)
 class ProductReviewsRestControllerIT {
 
     @Autowired
@@ -107,7 +122,7 @@ class ProductReviewsRestControllerIT {
                         {
                             "productId": 1,
                             "rating": 5,
-                            "review": "На пяторочку!"
+                            "review": "На пятeрочку!"
                         }""")
                 // then
                 .exchange()
@@ -119,9 +134,28 @@ class ProductReviewsRestControllerIT {
                         {
                             "productId": 1,
                             "rating": 5,
-                            "review": "На пяторочку!",
+                            "review": "На пятeрочку!",
                             "userId": "user-tester"
-                        }""").jsonPath("$.id").exists();
+                        }""").jsonPath("$.id").exists()
+                .consumeWith(document("feedback/product_reviews/create_product_review",
+                        preprocessRequest(prettyPrint()),
+                        preprocessResponse(prettyPrint()),
+                        requestFields(
+                                fieldWithPath("productId").type("int").description("Идентификатор товара"),
+                                fieldWithPath("rating").type("int").description("Оценка"),
+                                fieldWithPath("review").type("string").description("Отзыв")
+                        ),
+                        responseFields(
+                                fieldWithPath("id").type("uuid").description("Идентификатор отзыва"),
+                                fieldWithPath("productId").type("int").description("Идентификатор товара"),
+                                fieldWithPath("rating").type("int").description("Оценка"),
+                                fieldWithPath("review").type("string").description("Отзыв"),
+                                fieldWithPath("userId").type("string").description("Идентификатор пользователя")
+                        ),
+                        responseHeaders(
+                                headerWithName(HttpHeaders.LOCATION)
+                                        .description("Ссылка на созданный отзыв о товаре")
+                        )));
     }
 
     @Test
