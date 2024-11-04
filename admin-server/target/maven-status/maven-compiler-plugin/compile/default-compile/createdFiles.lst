@@ -1,0 +1,3 @@
+chernyshov\ignat\admin\AdminApplication.class
+chernyshov\ignat\admin\web\client\OAuthHttpHeadersProvider.class
+chernyshov\ignat\admin\config\SecurityBeans.class

@@ -11,5 +11,6 @@ chernyshov\ignat\feedback\entity\ProductReview.class
 chernyshov\ignat\feedback\controller\payload\NewProductReviewPayload.class
 chernyshov\ignat\feedback\repository\FavouriteProductRepository.class
 chernyshov\ignat\feedback\controller\ProductReviewsRestController.class
+chernyshov\ignat\feedback\config\ClientBeans.class
 chernyshov\ignat\feedback\entity\FavouriteProduct.class
 chernyshov\ignat\feedback\service\FavouriteProductsService.class
