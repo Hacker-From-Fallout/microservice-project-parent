@@ -22,5 +22,6 @@ spring:
             scope:
               - metrics
               - openid
+              - microprofile-jwt 
             client-id: admin-service
             client-secret: 6FSSh3TFMNZPxSW94Ynxl1XfUU9kYWlh
