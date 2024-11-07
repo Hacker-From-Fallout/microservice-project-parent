@@ -21,12 +21,12 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: http://localhost:8082/realms/selmag
+            issuer-uri: http://192.168.109.247:8082/realms/selmag
             user-name-attribute: preferred_username
         registration:
           keycloak:
             client-id: manager-app
-            client-secret: 0e8ShudoBqhAIpPhcdH8pyiZNG8orgLm
+            client-secret: MblWPkS3WIzgG0hKz5UCmRSLoyXpgfwG
             scope:
               - openid
               - view_catalogue
@@ -35,13 +35,13 @@ spring:
           metrics:
             provider: keycloak
             client-id: manager-app-metrics-client
-            client-secret: l9XE9a1wVC9ncEQa4BOOsZ8YHvaVzOZH
+            client-secret: lEa98XUA3uKXj9IFPw9xOh2959Di5h4B
             authorization-grant-type: client_credentials
             scope:
               - metrics_server
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8082/realms/selmag
+          issuer-uri: http://192.168.109.247:8082/realms/selmag
 management:
   health:
     livenessstate:
@@ -52,3 +52,7 @@ management:
     web:
       exposure:
         include: "*"
+  jmx:
+    metrics:
+      export:
+        enabled: true

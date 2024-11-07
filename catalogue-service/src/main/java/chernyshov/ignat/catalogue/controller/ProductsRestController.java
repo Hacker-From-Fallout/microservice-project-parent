@@ -32,16 +32,16 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("catalogue-api/products")
 public class ProductsRestController {
 
-	private final ProductService productService;
-	
-	@GetMapping
-	@Operation(security = @SecurityRequirement(name = "keycloak"))
-	public Iterable<Product> findProducts(@RequestParam(name = "filter", required = false) String filter) {
-		return this.productService.findAllProducts(filter);
-	}
-	
-	@PostMapping() 
-	@Operation(
+    private final ProductService productService;
+
+    @GetMapping
+    @Operation(security = @SecurityRequirement(name = "keycloak"))
+    public Iterable<Product> findProducts(@RequestParam(name = "filter", required = false) String filter) {
+        return this.productService.findAllProducts(filter);
+    }
+
+    @PostMapping
+    @Operation(
             security = @SecurityRequirement(name = "keycloak"),
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     content = @Content(
@@ -74,23 +74,23 @@ public class ProductsRestController {
                             }
                     )
             })
-	public ResponseEntity<?> createProduct(@Valid @RequestBody NewProductPayload payload,
-								 BindingResult bindingResult, 
-								 UriComponentsBuilder uriComponentsBuilder) 
-			throws BindException {
-		if (bindingResult.hasErrors()) {
-			if (bindingResult instanceof BindException exception) {
-				throw exception;
-			} else {
-				throw new BindException(bindingResult);
-			}
-		} else {
-			Product product = this.productService.createProduct(payload.title(), payload.details());
-			return ResponseEntity
-					.created(uriComponentsBuilder
-							.replacePath("/catalogue-api/products/{productId}")
-							.build(Map.of("productId", product.getId())))
-					.body(product);
-		}
-	}
+    public ResponseEntity<?> createProduct(@Valid @RequestBody NewProductPayload payload,
+                                           BindingResult bindingResult,
+                                           UriComponentsBuilder uriComponentsBuilder)
+            throws BindException {
+        if (bindingResult.hasErrors()) {
+            if (bindingResult instanceof BindException exception) {
+                throw exception;
+            } else {
+                throw new BindException(bindingResult);
+            }
+        } else {
+            Product product = this.productService.createProduct(payload.title(), payload.details());
+            return ResponseEntity
+                    .created(uriComponentsBuilder
+                            .replacePath("/catalogue-api/products/{productId}")
+                            .build(Map.of("productId", product.getId())))
+                    .body(product);
+        }
+    }
 }

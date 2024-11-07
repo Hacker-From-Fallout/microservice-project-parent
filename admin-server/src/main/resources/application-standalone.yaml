@@ -5,18 +5,18 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8082/realms/selmag
+          issuer-uri: http://192.168.109.247:8082/realms/selmag
       client:
         provider:
           keycloak:
-            issuer-uri: http://localhost:8082/realms/selmag
+            issuer-uri: http://192.168.109.247:8082/realms/selmag
         registration:
           keycloak:
             authorization-grant-type: client_credentials
             scope:
               - metrics
             client-id: admin-service
-            client-secret: 6FSSh3TFMNZPxSW94Ynxl1XfUU9kYWlh
+            client-secret: YhTLN4vdqwbfg1gpmAIOYxV2PaVuxPsw
           login:
             provider: keycloak
             scope:
@@ -24,4 +24,11 @@ spring:
               - openid
               - microprofile-jwt 
             client-id: admin-service
-            client-secret: 6FSSh3TFMNZPxSW94Ynxl1XfUU9kYWlh
+            client-secret: YhTLN4vdqwbfg1gpmAIOYxV2PaVuxPsw
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - prometheus

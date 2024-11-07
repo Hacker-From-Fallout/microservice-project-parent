@@ -38,7 +38,7 @@ public class ClientBeans {
                                         authorizedClientRepository), registrationId))
                 .build());
     }
-    
+
     @Bean
     @ConditionalOnProperty(name = "spring.boot.admin.client.enabled", havingValue = "true")
     public RegistrationClient registrationClient(

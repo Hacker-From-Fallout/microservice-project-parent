@@ -25,7 +25,7 @@ import java.util.List;
 @Configuration
 public class SecurityBeans {
 
-	@Bean
+    @Bean
     @Priority(0)
     public SecurityFilterChain metricsSecurityFilterChain(HttpSecurity http) throws Exception {
         return http
