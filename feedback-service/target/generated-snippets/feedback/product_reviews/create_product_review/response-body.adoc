@@ -1,0 +1,10 @@
+[source,json,options="nowrap"]
+----
+{
+  "id" : "b03c1c40-afbe-49b0-9fd7-25f99ff7f6bc",
+  "productId" : 1,
+  "rating" : 5,
+  "review" : "На пятeрочку!",
+  "userId" : "user-tester"
+}
+----

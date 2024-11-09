@@ -1,3 +1,5 @@
+loki:
+     url: ${LOKI:http://192.168.109.247:3100}
 spring:
   boot:
     admin:

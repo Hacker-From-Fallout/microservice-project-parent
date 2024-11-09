@@ -1,49 +1,9 @@
-spring:  
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://192.168.109.247:8082/realms/selmag
-      client:
-        registration:
-          keycloak:
-            client-id: catalogue-service-metrics-client
-            client-secret: HbKzQtkD9OhpMdDji2vKBBTiZap9t0X9
-            authorization-grant-type: client_credentials
-            scope:
-              - metrics_server
-        provider:
-          keycloak: 
-            issuer-uri: http://192.168.109.247:8082/realms/selmag
-  flyway:
-    schemas:
-      - public
-      - catalogue
-  jpa:
-    show-sql: true
+spring:
   datasource:
     url: jdbc:tc:postgresql:16:///selmag?TC_DAEMON=true
     username: selmag
     password: selmag
-server:
-  port: 8081
-logging:
-  level:
-    sql: info
-springdoc:
-  swagger-ui:
-      oauth: 
-        client-id: catalogue-service-swagger-ui
-        use-pkce-with-authorization-code-grant: true
-keycloak:
-  uri: http://localhost:8082
-management:
-  health:
-    livenessstate:
-      enabled: true
-    readinessstate:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+  boot:
+    admin:
+      client:
+        enabled: false
