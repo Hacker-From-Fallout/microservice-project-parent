@@ -8,7 +8,7 @@ spring:
           service-host-type: ip
         url: http://localhost:8085
   security:
-   oauth2:
+    oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://192.168.109.247:8082/realms/selmag

@@ -1,19 +1,18 @@
 package chernyshov.ignat.catalogue.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import chernyshov.ignat.catalogue.entity.Product;
 
 public interface ProductService {
 
-	Iterable<Product> findAllProducts(String filter);
+    Iterable<Product> findAllProducts(String filter);
 
-	Product createProduct(String title, String details);
+    Product createProduct(String title, String details);
 
-	Optional<Product> findProduct(int productId);
+    Optional<Product> findProduct(int productId);
 
-	void updateProduct(Integer id, String title, String details);
+    void updateProduct(Integer id, String title, String details);
 
-	void deleteProduct(Integer id);
+    void deleteProduct(Integer id);
 }

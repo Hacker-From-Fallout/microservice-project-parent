@@ -1,12 +1,55 @@
-selmag:
-  services:
-    catalogue:
-      uri: http://localhost:54321
 spring:
+  security:
+    oauth2: 
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://192.168.109.247:8082/realms/selmag
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: manager-app
+            client-secret: MblWPkS3WIzgG0hKz5UCmRSLoyXpgfwG
+            scope:
+              - openid
+              - view_catalogue
+              - edit_catalogue
+              - microprofile-jwt    
+          metrics:
+            provider: keycloak
+            client-id: manager-app-metrics-client
+            client-secret: lEa98XUA3uKXj9IFPw9xOh2959Di5h4B
+            authorization-grant-type: client_credentials
+            scope:
+              - metrics_server
+      resourceserver:
+        jwt:
+          issuer-uri: http://192.168.109.247:8082/realms/selmag
   flyway:
     enabled: false
   datasource:
     url: jdbc:tc:postgresql:16:///selmag-manager?TC_DAEMON=true
     username: selmag
     password: selmag
-            
+  boot:
+    admin:
+      client:
+        enabled: false
+management:
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  jmx:
+    metrics:
+      export:
+        enabled: true
+selmag:
+  services:
+    catalogue:
+      uri: http://localhost:54321
