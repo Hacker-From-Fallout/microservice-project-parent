@@ -5,6 +5,7 @@ chernyshov\ignat\feedback\controller\payload\NewFavouriteProductPayload.class
 chernyshov\ignat\feedback\service\DefaultFavouriteProductsService.class
 chernyshov\ignat\feedback\controller\ExceptionHandlingControllerAdvice.class
 chernyshov\ignat\feedback\FeedbackServiceApplication.class
+chernyshov\ignat\feedback\config\ObservationBeans.class
 chernyshov\ignat\feedback\repository\ProductReviewRepository.class
 chernyshov\ignat\feedback\controller\FavouriteProductsRestController.class
 chernyshov\ignat\feedback\entity\ProductReview.class

@@ -4,6 +4,8 @@ selmag:
      uri: http://localhost:8081
      registration-id: keycloak
 spring:
+  application:
+    name: selmag-manager-service
   boot:
     admin:
       client: 
@@ -56,3 +58,9 @@ management:
     metrics:
       export:
         enabled: true
+  zipkin:
+    tracing:
+      endpoint: http://192.168.109.247:9411
+  tracing:
+    sampling:
+      probability: 1.0

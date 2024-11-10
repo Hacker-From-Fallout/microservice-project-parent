@@ -1,6 +1,8 @@
 loki:
      url: ${LOKI:http://192.168.109.247:3100}
 spring:
+  application:
+    name: selmag-catalogue-service
   boot:
     admin:
       client:
@@ -57,3 +59,9 @@ management:
     web:
       exposure:
         include: "*"
+  zipkin:
+    tracing:
+      endpoint: http://192.168.109.247:9411
+  tracing:
+    sampling:
+      probability: 1.0
