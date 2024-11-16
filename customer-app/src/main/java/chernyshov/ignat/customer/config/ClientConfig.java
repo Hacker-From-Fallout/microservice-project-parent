@@ -2,6 +2,7 @@ package chernyshov.ignat.customer.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -25,6 +26,7 @@ import io.micrometer.observation.ObservationRegistry;
 public class ClientConfig {
 
 	@Bean
+	@LoadBalanced
     @Scope("prototype")
     public WebClient.Builder selmagServicesWebClientBuilder(
             ReactiveClientRegistrationRepository clientRegistrationRepository,
@@ -43,7 +45,7 @@ public class ClientConfig {
 	
     @Bean
     public WebClientProductsClient webClientProductsClient(
-            @Value("${selmag.services.catalogue.uri:http://localhost:8081}") String catalogueBaseUrl,
+            @Value("${selmag.services.catalogue.uri:lb://selmag-catalogue-service}") String catalogueBaseUrl,
             WebClient.Builder selmagServiceWebClientBuilder
     ) {
         return new WebClientProductsClient(selmagServiceWebClientBuilder
@@ -53,7 +55,7 @@ public class ClientConfig {
 
     @Bean
     public WebClientFavouriteProductsClient webClientFavouriteProductsClient(
-            @Value("${selmag.services.feedback.uri:http://localhost:8084}") String feedbackBaseUrl,
+            @Value("${selmag.services.feedback.uri:lb://selmag-feedback-service}") String feedbackBaseUrl,
             WebClient.Builder selmagServiceWebClientBuilder
     ) {
         return new WebClientFavouriteProductsClient(selmagServiceWebClientBuilder
@@ -63,11 +65,11 @@ public class ClientConfig {
 
     @Bean
     public WebClientProductReviewsClient webClientProductReviewsClient(
-            @Value("${selmag.services.feedback.uri:http://localhost:8084}") String feedbackBaseUrl,
+            @Value("${selmag.services.feedback.uri:lb://selmag-feedback-service}") String feedbackBaseUrl,
             WebClient.Builder selmagServiceWebClientBuilder
     ) {
         return new WebClientProductReviewsClient(selmagServiceWebClientBuilder
-                .baseUrl(feedbackBaseUrl)
+                .baseUrl(feedbackBaseUrl)         
                 .build());
     }
     

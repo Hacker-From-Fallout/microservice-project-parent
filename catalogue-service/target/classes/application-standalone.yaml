@@ -19,11 +19,11 @@ spring:
       client:
         registration:
           keycloak:
-            client-id: catalogue-service-metrics-client
+            client-id: catalogue-service
             client-secret: HbKzQtkD9OhpMdDji2vKBBTiZap9t0X9
             authorization-grant-type: client_credentials
             scope:
-              - metrics_server
+              - metrics_server    
         provider:
           keycloak: 
             issuer-uri: http://192.168.109.247:8082/realms/selmag

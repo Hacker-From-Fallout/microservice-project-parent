@@ -2,6 +2,7 @@ E:\Projects\projectsIT\java-project\Real web application using Spring\microservi
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\client\ProductsRestClient.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\client\RestClientProductsRestClient.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\config\ClientBeans.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\config\DiscoveryBeans.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\config\SecurityBeans.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\controller\payload\NewProductPayload.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\controller\payload\UpdateProductPayload.java
@@ -10,3 +11,4 @@ E:\Projects\projectsIT\java-project\Real web application using Spring\microservi
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\entity\Product.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\ManagerApplication.java
 E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\chernyshov\ignat\manager\security\OAuthClientHttpRequestInterceptor.java
+E:\Projects\projectsIT\java-project\Real web application using Spring\microservice-project-parent\manager-app\src\main\java\org\springframework\cloud\netflix\eureka\http\DefaultEurekaClientHttpRequestFactorySupplier.java

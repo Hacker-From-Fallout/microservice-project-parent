@@ -6,9 +6,11 @@ chernyshov\ignat\catalogue\controller\ProductsRestController.class
 chernyshov\ignat\catalogue\controller\payload\NewProductPayload.class
 chernyshov\ignat\catalogue\controller\BadRequestControllerAdvice.class
 chernyshov\ignat\catalogue\entity\Product.class
+chernyshov\ignat\catalogue\config\DiscoveryBeans.class
 chernyshov\ignat\catalogue\config\SpringDocBeans.class
 chernyshov\ignat\catalogue\service\ProductService.class
 chernyshov\ignat\catalogue\service\DefaultProductService.class
 chernyshov\ignat\catalogue\config\ClientBeans.class
 chernyshov\ignat\catalogue\repository\ProductRepository.class
 chernyshov\ignat\catalogue\controller\payload\UpdateProductPayload.class
+org\springframework\cloud\netflix\eureka\http\DefaultEurekaClientHttpRequestFactorySupplier.class

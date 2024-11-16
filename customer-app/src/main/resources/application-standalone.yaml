@@ -61,4 +61,4 @@ management:
       endpoint: http://192.168.109.247:9411
   tracing:
     sampling:
-      probability: 1.0
+      probability: 1.0	

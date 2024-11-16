@@ -9,7 +9,9 @@ chernyshov\ignat\customer\client\payload\NewProductReviewPayload.class
 chernyshov\ignat\customer\controller\ProductController.class
 chernyshov\ignat\customer\client\ProductsClient.class
 chernyshov\ignat\customer\CustomerApplication.class
+chernyshov\ignat\customer\config\DiscoveryBeans.class
 chernyshov\ignat\customer\client\WebClientProductReviewsClient.class
+org\springframework\cloud\netflix\eureka\http\DefaultEurekaClientHttpRequestFactorySupplier.class
 chernyshov\ignat\customer\controller\payload\NewProductReviewPayload.class
 chernyshov\ignat\customer\entity\Product.class
 chernyshov\ignat\customer\entity\FavouriteProduct.class

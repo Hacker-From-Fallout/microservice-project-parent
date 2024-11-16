@@ -1,3 +1,4 @@
+chernyshov\ignat\feedback\config\DiscoveryBeans.class
 chernyshov\ignat\feedback\config\SecurityBeans.class
 chernyshov\ignat\feedback\service\DefaultProductReviewsService.class
 chernyshov\ignat\feedback\service\ProductReviewsService.class
@@ -15,3 +16,4 @@ chernyshov\ignat\feedback\controller\ProductReviewsRestController.class
 chernyshov\ignat\feedback\config\ClientBeans.class
 chernyshov\ignat\feedback\entity\FavouriteProduct.class
 chernyshov\ignat\feedback\service\FavouriteProductsService.class
+org\springframework\cloud\netflix\eureka\http\DefaultEurekaClientHttpRequestFactorySupplier.class
