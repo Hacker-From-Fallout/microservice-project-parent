@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: chernyshov.ignat.manager.security.OAuthClientHttpRequestInterceptorTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.131 s -- in chernyshov.ignat.manager.security.OAuthClientHttpRequestInterceptorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 s -- in chernyshov.ignat.manager.security.OAuthClientHttpRequestInterceptorTest

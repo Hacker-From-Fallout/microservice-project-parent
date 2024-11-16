@@ -1,0 +1,14 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: selmag-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Hacker-From-Fallout/microservice-project-parent-config.git
+          clone-on-start: true
+          default-label: master
+          search-paths:
+          - '{application}/{profile}'
