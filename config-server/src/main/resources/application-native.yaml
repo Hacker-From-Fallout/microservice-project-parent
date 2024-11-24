@@ -1,0 +1,10 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: selmag-config-server
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: "file:/E:/Projects/projectsIT/java-project/Real web application using Spring/microservice-project-parent/config/cloud/{application}/{profile}"

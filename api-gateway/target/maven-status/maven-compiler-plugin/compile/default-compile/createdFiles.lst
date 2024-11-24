@@ -1,0 +1,5 @@
+chernyshov\ignat\gateway\config\SecurityBeans.class
+chernyshov\ignat\gateway\ApiGatewayApplication.class
+chernyshov\ignat\gateway\config\ClientBeans.class
+chernyshov\ignat\gateway\config\DiscoveryBeans.class
+org\springframework\cloud\netflix\eureka\http\DefaultEurekaClientHttpRequestFactorySupplier.class

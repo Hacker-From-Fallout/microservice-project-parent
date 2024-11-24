@@ -1,22 +1,25 @@
 selmag:
-  service:
+  services:
     catalogue:
-      uri: http://localhost:8081
+      uri: lb://selmag-catalogue-service
     feedback:
-      uri: http://localhost:8084
+      uri: lb://selmag-feedback-service
 server:
   port: 8083
 spring:
   application:
-    name: selmag-customer-service
+    name: selmag-customer-app
   boot:
     admin:
       client:
-        url: http://localhost:8085
+        url: http://127.0.0.1:8085
         instance:
           name: customer-app
           service-host-type: ip
         enabled: true
+  cloud:
+    config:
+      enabled: false
   security:
     oauth2:
       client:
@@ -34,8 +37,8 @@ spring:
               - view_catalogue
           metrics:
             provider: keycloak
-            client-id: customer-app-metrics-client
-            client-secret: mZONEZYoSl6F3GwH9IurPCl03UrwZ2xz
+            client-id: customer-app
+            client-secret: MbROevnUr8jmr6OQqH0TSvtyuX1ZUSPc
             authorization-grant-type: client_credentials
             scope:
               - metrics_server
@@ -51,14 +54,13 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
-  jmx:
-    metrics:
-      export:
-        enabled: true
+        include: '*'
   zipkin:
     tracing:
-      endpoint: http://192.168.109.247:9411
+      endpoint: http://127.0.0.1:9411/api/v2/spans
   tracing:
     sampling:
-      probability: 1.0	
+      probability: 1.0
+eureka:
+  client:
+    enabled: false

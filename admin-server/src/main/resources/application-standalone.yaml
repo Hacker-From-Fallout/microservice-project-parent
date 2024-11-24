@@ -1,6 +1,9 @@
 server:
   port: 8085
 spring:
+  cloud:
+    config:
+      enabled: false
   security:
     oauth2:
       resourceserver:
@@ -10,6 +13,7 @@ spring:
         provider:
           keycloak:
             issuer-uri: http://192.168.109.247:8082/realms/selmag
+            user-name-attribute: preferred_username
         registration:
           keycloak:
             authorization-grant-type: client_credentials
@@ -25,6 +29,8 @@ spring:
               - microprofile-jwt 
             client-id: admin-service
             client-secret: YhTLN4vdqwbfg1gpmAIOYxV2PaVuxPsw
+  application:
+    name: selmag-admin-server
 management:
   endpoints:
     web:
@@ -32,3 +38,6 @@ management:
         include:
           - health
           - prometheus
+eureka:
+  client:
+    enabled: false

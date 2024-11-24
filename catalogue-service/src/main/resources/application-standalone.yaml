@@ -1,16 +1,29 @@
-loki:
-     url: ${LOKI:http://192.168.109.247:3100}
+server:
+  port: 8081
 spring:
   application:
     name: selmag-catalogue-service
   boot:
     admin:
       client:
-        enabled: true
+        url: http://127.0.0.1:8085
         instance:
           name: catalogue-service
           service-host-type: ip
-        url: http://localhost:8085
+        enabled: false
+  cloud:
+    config:
+      enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/catalogue
+    username: catalogue
+    password: catalogue
+  flyway:
+    schemas:
+      - public
+      - catalogue
+  jpa:
+    show-sql: true
   security:
     oauth2:
       resourceserver:
@@ -23,30 +36,18 @@ spring:
             client-secret: HbKzQtkD9OhpMdDji2vKBBTiZap9t0X9
             authorization-grant-type: client_credentials
             scope:
-              - metrics_server    
+              - metrics_server
         provider:
-          keycloak: 
+          keycloak:
             issuer-uri: http://192.168.109.247:8082/realms/selmag
-  datasource:
-    url: jdbc:postgresql://localhost:5432/catalogue
-    username: catalogue
-    password: catalogue
-  flyway:
-    schemas:
-      - public
-      - catalogue
-  jpa:
-    show-sql: true
-server:
-  port: 8081
 logging:
   level:
     sql: info
 springdoc:
   swagger-ui:
-      oauth: 
-        client-id: catalogue-service-swagger-ui
-        use-pkce-with-authorization-code-grant: true
+    oauth:
+      client-id: catalogue-service-swagger-ui
+      use-pkce-with-authorization-code-grant: true
 keycloak:
   uri: http://localhost:8082
 management:
@@ -58,10 +59,13 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: '*'
   zipkin:
     tracing:
-      endpoint: http://192.168.109.247:9411
+      endpoint: http://127.0.0.1:9411/api/v2/spans
   tracing:
     sampling:
       probability: 1.0
+eureka:
+  client:
+    enabled: false

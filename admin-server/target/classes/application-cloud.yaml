@@ -1,6 +1,9 @@
 server:
   port: 8085
 spring:
+  cloud:
+    config:
+      enabled: false
   security:
     oauth2:
       resourceserver:
@@ -10,6 +13,7 @@ spring:
         provider:
           keycloak:
             issuer-uri: http://192.168.109.247:8082/realms/selmag
+            user-name-attribute: preferred_username
         registration:
           keycloak:
             authorization-grant-type: client_credentials
@@ -32,6 +36,8 @@ spring:
             authorization-grant-type: client_credentials
             scope:
               - discovery
+  application:
+    name: selmag-admin-server
 management:
   endpoints:
     web:
@@ -40,9 +46,9 @@ management:
           - health
           - prometheus
 eureka:
-  client:
-    service-url: 
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: false
   instance:
-    prefer-ip-address: true   
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    register-with-eureka: false
