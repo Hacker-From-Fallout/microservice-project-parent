@@ -12,14 +12,6 @@ spring:
           uri: lb://selmag-feedback-service
           predicates:
             - Host=feadback.api.chernyshov.ignat.127.0.0.1.nip.io:8086
-        - id: manager-app-route
-          uri: lb://selmag-manager-app
-          predicates:
-            - Host=manager.chernyshov.ignat.127.0.0.1.nip.io:8086
-        - id: customer-app-route
-          uri: lb://selmag-customer-app
-          predicates:
-            - Host=customer.chernyshov.ignat.127.0.0.1.nip.io:8086
   security:
     oauth2:
       resourceserver:

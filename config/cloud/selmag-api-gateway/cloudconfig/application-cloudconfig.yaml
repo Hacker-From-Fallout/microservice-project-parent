@@ -15,11 +15,11 @@ spring:
         - id: manager-app-route
           uri: lb://selmag-manager-app
           predicates:
-            - Host=manager.api.chernyshov.ignat.127.0.0.1.nip.io:8086
+            - Host=manager.chernyshov.ignat.127.0.0.1.nip.io:8086
         - id: customer-app-route
           uri: lb://selmag-customer-app
           predicates:
-            - Host=customer.api.chernyshov.ignat.127.0.0.1.nip.io:8086
+            - Host=customer.chernyshov.ignat.127.0.0.1.nip.io:8086
   security:
     oauth2:
       resourceserver:
@@ -69,5 +69,5 @@ eureka:
     hostname: 127.0.0.1
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
     registryFetchIntervalSeconds: 1

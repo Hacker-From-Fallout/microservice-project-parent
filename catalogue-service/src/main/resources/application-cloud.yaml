@@ -71,9 +71,6 @@ management:
       probability: 1.0
 eureka:
   instance:
-#    prefer-ip-address: false
-#    hostname: catalogue.api.chernyshov.ignat.127.0.0.1.nip.io
-#    nonSecurePort: 8086
     prefer-ip-address: true
   client:
     service-url:
