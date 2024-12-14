@@ -22,10 +22,10 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: http://192.168.109.247:8082/realms/selmag
+            issuer-uri: http://127.0.0.1:8082/realms/selmag
             user-name-attribute: preferred_username
         registration:
-          keycloak:
+          keycloak:         
             client-id: manager-app
             client-secret: MblWPkS3WIzgG0hKz5UCmRSLoyXpgfwG
             scope:
@@ -49,7 +49,7 @@ spring:
               - discovery
       resourceserver:
         jwt:
-          issuer-uri: http://192.168.109.247:8082/realms/selmag
+          issuer-uri: http://127.0.0.1:8082/realms/selmag
 management:
   health:
     livenessstate:
@@ -68,11 +68,7 @@ management:
       probability: 1.0
 eureka:
   instance:
-    hostname: 127.0.0.1
     prefer-ip-address: true
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 1
   client:
-    registryFetchIntervalSeconds: 1
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/

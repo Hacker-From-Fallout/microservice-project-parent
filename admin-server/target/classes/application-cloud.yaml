@@ -8,11 +8,11 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://192.168.109.247:8082/realms/selmag
+          issuer-uri: http://127.0.0.1:8082/realms/selmag
       client:
         provider:
           keycloak:
-            issuer-uri: http://192.168.109.247:8082/realms/selmag
+            issuer-uri: http://127.0.0.1:8082/realms/selmag
             user-name-attribute: preferred_username
         registration:
           keycloak:
@@ -48,7 +48,10 @@ management:
 eureka:
   instance:
     prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 1
   client:
+    register-with-eureka: false
+    registryFetchIntervalSeconds: 1
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
-    register-with-eureka: false

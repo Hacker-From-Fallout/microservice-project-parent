@@ -11,16 +11,24 @@ spring:
         - id: feedback-service-route
           uri: lb://selmag-feedback-service
           predicates:
-            - Host=feadback.api.chernyshov.ignat.127.0.0.1.nip.io:8086
+            - Host=feedback.api.chernyshov.ignat.127.0.0.1.nip.io:8086
+        - id: manager-app-route
+          uri: lb://selmag-manager-service
+          predicates:
+            - Host=manager.chernyshov.ignat.127.0.0.1.nip.io:8086
+        - id: customer-app-route
+          uri: lb://selmag-customer-service
+          predicates:
+            - Host=customer.chernyshov.ignat.127.0.0.1.nip.io:8086
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://192.168.109.247:8082/realms/selmag
+          issuer-uri: http://127.0.0.1:8082/realms/selmag
       client:
         provider:
           keycloak:
-            issuer-uri: http://192.168.109.247:8082/realms/selmag
+            issuer-uri: http://127.0.0.1:8082/realms/selmag
         registration:
           discovery:
             provider: keycloak

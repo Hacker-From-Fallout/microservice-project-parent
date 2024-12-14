@@ -18,7 +18,7 @@ spring:
         provider:
           keycloak:
             user-name-attribute: preferred_username
-            issuer-uri: http://192.168.109.247:8082/realms/selmag
+            issuer-uri: http://127.0.0.1:8082/realms/selmag
         registration:
           keycloak:
             client-id: eureka-server
@@ -28,7 +28,7 @@ spring:
               - microprofile-jwt    
       resourceserver:
         jwt:
-          issuer-uri: http://192.168.109.247:8082/realms/selmag
+          issuer-uri: http://127.0.0.1:8082/realms/selmag
 management:
   health:
     livenessstate:

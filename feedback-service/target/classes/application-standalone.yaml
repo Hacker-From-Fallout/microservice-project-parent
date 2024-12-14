@@ -21,7 +21,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://192.168.109.247:8082/realms/selmag
+          issuer-uri: http://127.0.0.1:8082/realms/selmag
       client:
         registration:
           keycloak:
@@ -39,14 +39,14 @@ spring:
               - discovery
         provider:
           keycloak:
-            issuer-uri: http://192.168.109.247:8082/realms/selmag
+            issuer-uri: http://127.0.0.1:8082/realms/selmag
 springdoc:
   swagger-ui:
     oauth:
       client-id: feedback-service-swagger-ui
       use-pkce-with-authorization-code-grant: true
 keycloak:
-  uri: http://localhost:8082
+  uri: http://127.0.0.1:8082
 management:
   health:
     livenessstate:
