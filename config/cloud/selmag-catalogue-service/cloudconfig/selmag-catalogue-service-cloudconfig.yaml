@@ -1,5 +1,5 @@
 loki:
-  url: ${LOKI:http://127.0.0.1:3100}
+  url: ${LOKI:http://172.17.0.1:3100}
 spring:
   boot:
     admin:
@@ -9,7 +9,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://127.0.0.1:8082/realms/selmag
+          issuer-uri: http://keycloak:8080/realms/selmag
       client:
         registration:
           keycloak:
@@ -27,9 +27,9 @@ spring:
               - discovery
         provider:
           keycloak: 
-            issuer-uri: http://127.0.0.1:8082/realms/selmag
+            issuer-uri: http://keycloak:8080/realms/selmag
   datasource:
-    url: jdbc:postgresql://localhost:5432/catalogue
+    url: jdbc:postgresql://172.17.0.1:5432/catalogue
     username: catalogue
     password: catalogue
   flyway:
@@ -47,7 +47,7 @@ springdoc:
         client-id: catalogue-service-swagger-ui
         use-pkce-with-authorization-code-grant: true
 keycloak:
-  uri: http://127.0.0.1:8082
+  uri: http://keycloak:8080/realms/selmag
 management:
   health:
     livenessstate:
@@ -60,7 +60,7 @@ management:
         include: "*"
   zipkin:
     tracing:
-      endpoint: http://127.0.0.1:9411
+      endpoint: http://172.17.0.1:9411
   tracing:
     sampling:
       probability: 1.0
@@ -72,4 +72,4 @@ eureka:
   client:
     registryFetchIntervalSeconds: 1
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://172.17.0.1:8761/eureka/

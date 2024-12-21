@@ -5,12 +5,12 @@ spring:
         enabled: false
   data:
     mongodb:
-      uri: mongodb://localhost:27017/feedback
+      uri: mongodb://172.17.0.1:27017/feedback
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://127.0.0.1:8082/realms/selmag
+          issuer-uri: http://keycloak:8080/realms/selmag
       client:
         registration:
           keycloak:
@@ -28,14 +28,14 @@ spring:
               - discovery
         provider:
           keycloak: 
-            issuer-uri: http://127.0.0.1:8082/realms/selmag
+            issuer-uri: http://keycloak:8080/realms/selmag
 springdoc:
   swagger-ui:
     oauth:
       client-id: feedback-service-swagger-ui
       use-pkce-with-authorization-code-grant: true
 keycloak:
-  uri: http://127.0.0.1:8082
+  uri: http://172.17.0.1:8082
 management:
   health:
     livenessstate:
@@ -52,7 +52,7 @@ management:
         enabled: true
   zipkin:
     tracing:
-      endpoint: http://127.0.0.1:9411
+      endpoint: http://172.17.0.1:9411
   tracing:
     sampling:
       probability: 1.0
@@ -64,4 +64,4 @@ eureka:
   client:
     registryFetchIntervalSeconds: 1
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://172.17.0.1:8761/eureka/

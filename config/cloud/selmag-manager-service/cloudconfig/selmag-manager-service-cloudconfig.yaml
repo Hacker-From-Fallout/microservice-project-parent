@@ -17,7 +17,7 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: http://127.0.0.1:8082/realms/selmag
+            issuer-uri: http://keycloak:8080/realms/selmag
             user-name-attribute: preferred_username
         registration:
           keycloak:
@@ -44,7 +44,7 @@ spring:
               - discovery
       resourceserver:
         jwt:
-          issuer-uri: http://127.0.0.1:8082/realms/selmag
+          issuer-uri: http://keycloak:8080/realms/selmag
 management:
   health:
     livenessstate:
@@ -61,7 +61,7 @@ management:
         enabled: true
   zipkin:
     tracing:
-      endpoint: http://127.0.0.1:9411
+      endpoint: http://172.17.0.1:9411
   tracing:
     sampling:
       probability: 1.0
@@ -73,4 +73,4 @@ eureka:
   client:
     registryFetchIntervalSeconds: 1
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://172.17.0.1:8761/eureka/

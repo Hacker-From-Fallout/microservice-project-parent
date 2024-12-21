@@ -5,8 +5,6 @@ WORKDIR /build
 
 ADD $JAR_FILE application.jar
 RUN java -Djarmode=tools -jar application.jar extract --layers --launcher --destination extracted
-RUN ls -la /build/
-RUN ls -la /build
 
 FROM eclipse-temurin:21.0.2_13-jdk-jammy
 
